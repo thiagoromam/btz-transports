@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtzTransports.Web", "BtzTra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtzTransports.Context", "BtzTransports.Context\BtzTransports.Context.csproj", "{D7A6669C-CD90-4E45-A884-A5DA96DCAB68}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{D2A4EC32-F0AF-4468-8385-ACD3F0EFA34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General", "General\General.csproj", "{9736B294-19B6-4036-8D61-78C9492A30C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{D7A6669C-CD90-4E45-A884-A5DA96DCAB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7A6669C-CD90-4E45-A884-A5DA96DCAB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7A6669C-CD90-4E45-A884-A5DA96DCAB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9736B294-19B6-4036-8D61-78C9492A30C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9736B294-19B6-4036-8D61-78C9492A30C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9736B294-19B6-4036-8D61-78C9492A30C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9736B294-19B6-4036-8D61-78C9492A30C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9736B294-19B6-4036-8D61-78C9492A30C0} = {D2A4EC32-F0AF-4468-8385-ACD3F0EFA34A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {924D6FB9-D84A-4F52-86A5-142E07F7817E}
