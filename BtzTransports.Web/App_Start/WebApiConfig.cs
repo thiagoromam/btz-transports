@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace BtzTransports.Web
@@ -19,6 +18,10 @@ namespace BtzTransports.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var xmlFormatter = config.Formatters.OfType<XmlMediaTypeFormatter>().Single();
+
+            config.Formatters.Remove(xmlFormatter);
         }
     }
 }
