@@ -1,0 +1,38 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Usuários";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/api/usuarios")
+    @Scripts.Render("~/bundles/usuario/index")
+}
+
+<div ng-controller="UsuariosController" ng-init="listar()">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Login</th>
+                <th class="text-end">
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="usuario in usuarios">
+                <td ng-bind="usuario.nome"></td>
+                <td ng-bind="usuario.login"></td>
+                <td class="text-end">
+                    <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{usuario.id}}">Editar</a>
+                    <button class="btn btn-danger btn-sm" ng-click="remover(usuario)">Remover</button>
+                </td>
+            </tr>
+            <tr ng-show="usuarios.length == 0">
+                <td colspan="6">
+                    Nenhum usuário cadastrado.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+﻿@model int?
+@{
+    ViewBag.Title = Model != null ? "Editar usuário" : "Novo usuário";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/api/usuarios")
+    @Scripts.Render("~/bundles/usuario/editar")
+}
+
+<div ng-controller="EditarController" ng-init="carregar(@Model)">
+    <form ng-submit="salvar()">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" ng-model="usuario.nome" maxlength="50" required />
+        </div>
+        <div class="form-group">
+            <label>Login</label>
+            <input type="text" class="form-control" ng-model="usuario.login" maxlength="20" required />
+        </div>
+        <div class="form-group">
+            <label>Senha</label>
+            <input type="password" class="form-control" ng-model="usuario.senha" maxlength="10" ng-required="!usuario.id" />
+        </div>
+        <div class="form-group" ng-if="usuario.senha">
+            <label>Confirmação</label>
+            <input type="password" class="form-control" ng-model="usuario.confirmacaoDaSenha" maxlength="10" required />
+        </div>
+
+        <div class="mt-5">
+            <button class="btn btn-primary">Salvar</button>
+            <a class="btn btn-secondary" href="@Url.Action("Index")">Cancelar</a>
+        </div>
+    </form>
+</div>

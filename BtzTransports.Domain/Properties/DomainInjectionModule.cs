@@ -23,6 +23,7 @@ namespace BtzTransports.Domain.Properties
             _container.Register<IUsuarioDaSessao, UsuarioDaSessao>(Lifestyle.Scoped);
             _container.Register<ISessionUser, UsuarioDaSessao>(Lifestyle.Scoped);
             _container.Register<IGerenciadorDeContas, GerenciadorDeContas>();
+            _container.Register<IGerenciadorDeUsuarios, GerenciadorDeUsuarios>();
         }
         private void Motoristas()
         {

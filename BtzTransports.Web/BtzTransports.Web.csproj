@@ -187,6 +187,7 @@
   <ItemGroup>
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\ContaController.cs" />
+    <Compile Include="Api\UsuariosController.cs" />
     <Compile Include="Api\MotoristasController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Authorization\ApiAuthorizationAttribute.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\ExceptionHandlerAttribute.cs" />
     <Compile Include="Authorization\MvcAuthorizationAttribute.cs" />
     <Compile Include="Controllers\BaseMvcController.cs" />
@@ -204,6 +206,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contas\LoginModel.cs" />
+    <Compile Include="Models\Contas\UsuarioModel.cs" />
     <Compile Include="Models\Motoristas\MotoristaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WebInjectionModule.cs" />
@@ -234,6 +237,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\api\usuarios.js" />
     <Content Include="Scripts\api\motoristas.js" />
     <Content Include="Scripts\api\conta.js" />
     <Content Include="Scripts\app\api-service.js" />
@@ -259,6 +263,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\usuario\editar.js" />
+    <Content Include="Scripts\usuario\index.js" />
     <Content Include="Scripts\motorista\index.js" />
     <Content Include="Scripts\motorista\editar.js" />
     <Content Include="Scripts\sweetalert.min.js" />
@@ -280,6 +286,8 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Motorista\Editar.cshtml" />
     <Content Include="Views\Motorista\Index.cshtml" />
+    <Content Include="Views\Usuario\Editar.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
