@@ -48,7 +48,7 @@ namespace BtzTransports.Web
             ));
 
             // apis
-            bundles.Add(new ScriptBundle("~/bundles/api/conta").Include("~/Scripts/api/conta.js"));
+            bundles.Add(new ScriptBundle("~/bundles/api/contas").Include("~/Scripts/api/contas.js"));
             bundles.Add(new ScriptBundle("~/bundles/api/usuarios").Include("~/Scripts/api/usuarios.js"));
             bundles.Add(new ScriptBundle("~/bundles/api/motoristas").Include("~/Scripts/api/motoristas.js"));
 

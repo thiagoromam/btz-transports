@@ -9,13 +9,13 @@ using System.Web.Http;
 
 namespace BtzTransports.Web.Api
 {
-    [RoutePrefix("api/conta")]
-    public class ContaController : BaseApiController
+    [RoutePrefix("api/contas")]
+    public class ContasController : BaseApiController
     {
         private readonly IGerenciadorDeContas _gerenciadorDeContas;
         private readonly IAuthenticationManager _authenticationManager;
 
-        public ContaController(IGerenciadorDeContas gerenciadorDeContas, IAuthenticationManager authenticationManager)
+        public ContasController(IGerenciadorDeContas gerenciadorDeContas, IAuthenticationManager authenticationManager)
         {
             _gerenciadorDeContas = gerenciadorDeContas;
             _authenticationManager = authenticationManager;

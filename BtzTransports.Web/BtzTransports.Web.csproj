@@ -186,7 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\BaseApiController.cs" />
-    <Compile Include="Api\ContaController.cs" />
+    <Compile Include="Api\ContasController.cs" />
     <Compile Include="Api\UsuariosController.cs" />
     <Compile Include="Api\MotoristasController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -239,7 +239,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\api\usuarios.js" />
     <Content Include="Scripts\api\motoristas.js" />
-    <Content Include="Scripts\api\conta.js" />
+    <Content Include="Scripts\api\contas.js" />
     <Content Include="Scripts\app\api-service.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\enums.js" />
