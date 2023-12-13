@@ -20,7 +20,7 @@
             requisicao
                 .then(() => {
                     toastr.success("Motorista salvo com sucesso.");
-                    setTimeout(() => location.href = "/Motorista", 2000);
+                    setTimeout(() => location.href = "/Motorista", 1000);
                 })
                 .catch(r =>
                     toastr.error(r.data.message)

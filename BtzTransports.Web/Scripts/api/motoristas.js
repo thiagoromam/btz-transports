@@ -4,6 +4,9 @@
     api.resource("motoristas", ["$http", function (http) {
         var uri = "/api/motoristas";
 
+        this.listar = function () {
+            return http.get(uri);
+        }
         this.buscar = function (id) {
             return http.get(`${uri}/${id}`);
         };
@@ -12,6 +15,9 @@
         };
         this.atualizar = function (motorista) {
             return http.put(`${uri}/${motorista.id}`, motorista);
+        };
+        this.remover = function (id) {
+            return http.delete(`${uri}/${id}`);
         };
     }]);
 })();

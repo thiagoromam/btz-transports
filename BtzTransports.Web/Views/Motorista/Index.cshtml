@@ -1,0 +1,44 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Motoristas";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/api/motoristas")
+    @Scripts.Render("~/bundles/motorista/index")
+}
+
+<div ng-controller="MotoristasController" ng-init="listar()">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>CNH</th>
+                <th>Data de Nascimento</th>
+                <th>Status</th>
+                <th class="text-end">
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="motorista in motoristas">
+                <td ng-bind="motorista.nome"></td>
+                <td ng-bind="motorista.cpf"></td>
+                <td ng-bind="motorista.cnh"></td>
+                <td ng-bind="motorista.dataDeNascimento | date: 'dd/MM/yyyy'"></td>
+                <td ng-bind="motorista.status | statusDoMotorista"></td>
+                <td class="text-end">
+                    <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{motorista.id}}">Editar</a>
+                    <button class="btn btn-danger btn-sm" ng-click="remover(motorista)">Remover</button>
+                </td>
+            </tr>
+            <tr ng-show="motoristas.length == 0">
+                <td colspan="6">
+                    Nenhum motorista cadastrado.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -7,6 +7,7 @@ namespace BtzTransports.Motoristas
     {
         void Adicionar(Motorista motorista);
         void Atualizar(Motorista motorista);
+        void Remover(int id);
     }
 
     class GerenciadorDeMotoristas : IGerenciadorDeMotoristas
@@ -33,6 +34,13 @@ namespace BtzTransports.Motoristas
             existente.DataDeNascimento = motorista.DataDeNascimento;
             existente.Status = motorista.Status;
 
+            _contexto.SaveChanges();
+        }
+        public void Remover(int id)
+        {
+            Motorista motorista = _contexto.Motoristas.Find(id) ?? throw new NotFoundException();
+
+            _contexto.Motoristas.Remove(motorista);
             _contexto.SaveChanges();
         }
     }

@@ -259,6 +259,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\motorista\index.js" />
     <Content Include="Scripts\motorista\editar.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -280,6 +281,7 @@
     <Content Include="Views\Shared\_Layout.Base.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Motorista\Editar.cshtml" />
+    <Content Include="Views\Motorista\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,7 @@
 ﻿using BtzTransports.Context;
 using BtzTransports.Motoristas;
 using BtzTransports.Web.Models.Motoristas;
+using System.Linq;
 using System.Web.Http;
 
 namespace BtzTransports.Web.Api
@@ -15,6 +16,16 @@ namespace BtzTransports.Web.Api
         {
             _contexto = contexto;
             _gerenciador = gerenciador;
+        }
+
+        [HttpGet]
+        public IHttpActionResult Listar()
+        {
+            var motoristas = _contexto.Motoristas.ToArray();
+
+            // query, buscas e paginação ao invés de enumeração
+
+            return Ok(motoristas.Select(MotoristaModel.Converter));
         }
 
         [HttpGet]
@@ -46,6 +57,14 @@ namespace BtzTransports.Web.Api
             Motorista motorista = model.Converter();
 
             _gerenciador.Atualizar(motorista);
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Remover(int id)
+        {
+            _gerenciador.Remover(id);
 
             return Ok();
         }

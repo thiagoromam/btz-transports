@@ -32,7 +32,7 @@ namespace BtzTransports.Web
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/messages").Include(
-                "~/Scripts/sweetalert.js",
+                "~/Scripts/sweetalert.min.js",
                 "~/Scripts/toastr.js"
             ));
 
@@ -55,6 +55,7 @@ namespace BtzTransports.Web
             bundles.Add(new ScriptBundle("~/bundles/conta/login").Include("~/Scripts/conta/login.js"));
 
             // motorista
+            bundles.Add(new ScriptBundle("~/bundles/motorista/index").Include("~/Scripts/motorista/index.js"));
             bundles.Add(new ScriptBundle("~/bundles/motorista/editar").Include("~/Scripts/motorista/editar.js"));
         }
     }
