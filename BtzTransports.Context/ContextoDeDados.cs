@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using BtzTransports.Abastecimentos;
+using BtzTransports.Motoristas;
+using BtzTransports.Veiculos;
+using System.Data.Entity;
 using System.Reflection;
 
 namespace BtzTransports.Context
@@ -8,6 +11,10 @@ namespace BtzTransports.Context
         public ContextoDeDados() : base("DefaultConnection")
         {
         }
+
+        public DbSet<Abastecimento> Abastecimentos { get; set; }
+        public DbSet<Motorista> Motoristas { get; set; }
+        public DbSet<Veiculo> Veiculos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder model)
         {

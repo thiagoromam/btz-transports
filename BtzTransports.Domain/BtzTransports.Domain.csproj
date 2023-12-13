@@ -36,9 +36,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abastecimentos\Abastecimento.cs" />
+    <Compile Include="Abastecimentos\TipoDeCombustivel.cs" />
     <Compile Include="Context\IContextoDeDados.cs" />
+    <Compile Include="Motoristas\CategoriaDaCnh.cs" />
+    <Compile Include="Motoristas\Motorista.cs" />
+    <Compile Include="Motoristas\StatusDoMotorista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\DomainInjectionModule.cs" />
+    <Compile Include="Veiculos\Veiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\General\General.csproj">
