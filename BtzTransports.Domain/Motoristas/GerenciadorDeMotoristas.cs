@@ -1,5 +1,7 @@
 ﻿using BtzTransports.Context;
+using BtzTransports.Exceptions;
 using General.Exceptions;
+using System.Linq;
 
 namespace BtzTransports.Motoristas
 {
@@ -21,11 +23,15 @@ namespace BtzTransports.Motoristas
 
         public void Adicionar(Motorista motorista)
         {
+            ValidarEdicao(motorista);
+
             _contexto.Motoristas.Add(motorista);
             _contexto.SaveChanges();
         }
         public void Atualizar(Motorista motorista)
         {
+            ValidarEdicao(motorista);
+
             Motorista existente = _contexto.Motoristas.Find(motorista.Id) ?? throw new NotFoundException();
 
             existente.Nome = motorista.Nome;
@@ -42,6 +48,20 @@ namespace BtzTransports.Motoristas
 
             _contexto.Motoristas.Remove(motorista);
             _contexto.SaveChanges();
+        }
+
+        private void ValidarEdicao(Motorista motorista)
+        {
+            var query = _contexto.Motoristas.AsQueryable();
+
+            if (motorista.Id > 0)
+                query = query.Where(m => m.Id != motorista.Id);
+
+            if (query.Any(m => m.Cpf == motorista.Cpf))
+                throw new CommonException("Já existe um motorista com esse CPF");
+
+            if (query.Any(m => m.Cnh == motorista.Cnh))
+                throw new CommonException("Já existe um motorista com essa CNH");
         }
     }
 }
