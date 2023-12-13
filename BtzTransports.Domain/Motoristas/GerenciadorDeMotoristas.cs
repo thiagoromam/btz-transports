@@ -46,6 +46,9 @@ namespace BtzTransports.Motoristas
         {
             Motorista motorista = _contexto.Motoristas.Find(id) ?? throw new NotFoundException();
 
+            if (!PodeSerRemovido(motorista))
+                throw new CommonException("Esse motorista contém vínculos e não pode ser removido.");
+
             _contexto.Motoristas.Remove(motorista);
             _contexto.SaveChanges();
         }
@@ -62,6 +65,10 @@ namespace BtzTransports.Motoristas
 
             if (query.Any(m => m.Cnh == motorista.Cnh))
                 throw new CommonException("Já existe um motorista com essa CNH");
+        }
+        private bool PodeSerRemovido(Motorista motorista)
+        {
+            return !_contexto.Abastecimentos.Any(a => a.IdMotorista == motorista.Id);
         }
     }
 }
