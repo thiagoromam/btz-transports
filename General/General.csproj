@@ -39,7 +39,11 @@
     <Compile Include="Authorization\IRequestContext.cs" />
     <Compile Include="Authorization\SessionUser.cs" />
     <Compile Include="Context\IEntity.cs" />
+    <Compile Include="Helpers\ByteHelper.cs" />
     <Compile Include="Helpers\ClaimsIdentityHelper.cs" />
+    <Compile Include="Helpers\EncryptionHelper.cs" />
+    <Compile Include="Helpers\IntHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Injection\IInjectionModule.cs" />
     <Compile Include="Injection\InjectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,16 +1,9 @@
-﻿using BtzTransports.Contas;
-using General.Authorization;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace BtzTransports.Web.Controllers
 {
     public class ContaController : BaseMvcController
     {
-        public ContaController(ISessionUser sessionUser, IUsuarioDaSessao usuarioDaSessao)
-        {
-            
-        }
-
         [AllowAnonymous]
         public ActionResult Login()
         {
