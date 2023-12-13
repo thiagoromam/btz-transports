@@ -47,3 +47,22 @@ CREATE TABLE Abastecimento (
 	CONSTRAINT FK_Abastecimento_IdMotorista FOREIGN KEY (IdMotorista) REFERENCES Motorista (Id),
 )
 GO
+
+CREATE TABLE Combustivel (
+	Tipo INT NOT NULL,
+	Preco DECIMAL(4, 2) NOT NULL,
+
+	CONSTRAINT PK_Combustivel PRIMARY KEY (Tipo)
+)
+GO
+
+CREATE TABLE Usuario (
+	Id INT IDENTITY,
+	Nome VARCHAR(50) NOT NULL,
+	[Login] VARCHAR(20) NOT NULL,
+	Senha VARCHAR(100) NOT NULL,
+
+	CONSTRAINT PK_Usuario PRIMARY KEY (Id),
+	INDEX UX_Usuario_Login UNIQUE ([Login])
+)
+GO
