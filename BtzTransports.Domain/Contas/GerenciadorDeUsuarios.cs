@@ -1,4 +1,5 @@
 ﻿using BtzTransports.Context;
+using BtzTransports.Exceptions;
 using General.Exceptions;
 using General.Helpers;
 
@@ -14,15 +15,19 @@ namespace BtzTransports.Contas
     class GerenciadorDeUsuarios : IGerenciadorDeUsuarios
     {
         private readonly IContextoDeDados _contexto;
+        private readonly IGerenciadorDeContas _gerenciadorDeContas;
 
-        public GerenciadorDeUsuarios(IContextoDeDados contexto)
+        public GerenciadorDeUsuarios(IContextoDeDados contexto, IGerenciadorDeContas gerenciadorDeContas)
         {
             _contexto = contexto;
+            _gerenciadorDeContas = gerenciadorDeContas;
         }
 
         public void Adicionar(Usuario usuario, string senha)
         {
             usuario.DefinirSenha(senha);
+
+            ValidarDisponibilidade(usuario);
 
             _contexto.Usuarios.Add(usuario);
             _contexto.SaveChanges();
@@ -30,6 +35,8 @@ namespace BtzTransports.Contas
         public void Atualizar(Usuario usuario, string senha)
         {
             Usuario existente = _contexto.Usuarios.Find(usuario.Id) ?? throw new NotFoundException();
+
+            ValidarDisponibilidade(usuario);
 
             existente.Nome = usuario.Nome;
             existente.Login = usuario.Login;
@@ -45,6 +52,12 @@ namespace BtzTransports.Contas
 
             _contexto.Usuarios.Remove(usuario);
             _contexto.SaveChanges();
+        }
+
+        private void ValidarDisponibilidade(Usuario usuario)
+        {
+            if (!_gerenciadorDeContas.VerificarDisponibilidade(usuario.Id, usuario.Login))
+                throw new CommonException("Esse login já está em uso.");
         }
     }
 }
