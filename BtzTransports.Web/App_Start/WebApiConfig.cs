@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json.Serialization;
+using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 
@@ -20,8 +21,11 @@ namespace BtzTransports.Web
             );
 
             var xmlFormatter = config.Formatters.OfType<XmlMediaTypeFormatter>().Single();
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().Single();
 
             config.Formatters.Remove(xmlFormatter);
+
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
