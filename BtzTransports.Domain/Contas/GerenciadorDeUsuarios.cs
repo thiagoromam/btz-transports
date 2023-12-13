@@ -25,18 +25,18 @@ namespace BtzTransports.Contas
 
         public void Adicionar(Usuario usuario, string senha)
         {
-            usuario.DefinirSenha(senha);
-
             ValidarDisponibilidade(usuario);
+
+            usuario.DefinirSenha(senha);
 
             _contexto.Usuarios.Add(usuario);
             _contexto.SaveChanges();
         }
         public void Atualizar(Usuario usuario, string senha)
         {
-            Usuario existente = _contexto.Usuarios.Find(usuario.Id) ?? throw new NotFoundException();
-
             ValidarDisponibilidade(usuario);
+
+            Usuario existente = _contexto.Usuarios.Find(usuario.Id) ?? throw new NotFoundException();
 
             existente.Nome = usuario.Nome;
             existente.Login = usuario.Login;
