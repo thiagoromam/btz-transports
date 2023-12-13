@@ -13,5 +13,7 @@ namespace BtzTransports.Context
         DbSet<Motorista> Motoristas { get; }
         DbSet<Veiculo> Veiculos { get; }
         DbSet<Usuario> Usuarios { get; }
+
+        int SaveChanges();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using BtzTransports.Web.Serialization;
+using Newtonsoft.Json.Serialization;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
@@ -25,7 +26,7 @@ namespace BtzTransports.Web
 
             config.Formatters.Remove(xmlFormatter);
 
-            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            jsonFormatter.SerializerSettings = new CommonJsonSettings();
         }
     }
 }

@@ -39,6 +39,8 @@
     <Compile Include="Authorization\IRequestContext.cs" />
     <Compile Include="Authorization\SessionUser.cs" />
     <Compile Include="Context\IEntity.cs" />
+    <Compile Include="Exceptions\CommonException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Helpers\ByteHelper.cs" />
     <Compile Include="Helpers\ClaimsIdentityHelper.cs" />
     <Compile Include="Helpers\EncryptionHelper.cs" />

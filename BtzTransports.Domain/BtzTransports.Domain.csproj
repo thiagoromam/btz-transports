@@ -44,6 +44,7 @@
     <Compile Include="Contas\Usuario.cs" />
     <Compile Include="Context\IContextoDeDados.cs" />
     <Compile Include="Motoristas\CategoriaDaCnh.cs" />
+    <Compile Include="Motoristas\GerenciadorDeMotoristas.cs" />
     <Compile Include="Motoristas\Motorista.cs" />
     <Compile Include="Motoristas\StatusDoMotorista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
