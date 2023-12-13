@@ -19,6 +19,7 @@ namespace BtzTransports.Web.App_Start
         {
             var container = new Container();
 
+            container.Options.EnableAutoVerification = false;
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
             container.RegisterModules(GetModules());

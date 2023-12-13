@@ -35,15 +35,23 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\IntegratedAuthorization.cs" />
+    <Compile Include="Authorization\IRequestContext.cs" />
+    <Compile Include="Authorization\SessionUser.cs" />
     <Compile Include="Context\IEntity.cs" />
+    <Compile Include="Helpers\ClaimsIdentityHelper.cs" />
     <Compile Include="Injection\IInjectionModule.cs" />
     <Compile Include="Injection\InjectionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Owin.Security.OAuth">
+      <Version>4.2.2</Version>
+    </PackageReference>
     <PackageReference Include="SimpleInjector">
       <Version>5.4.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

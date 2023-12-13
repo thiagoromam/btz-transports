@@ -39,6 +39,7 @@
     <Compile Include="Abastecimentos\Abastecimento.cs" />
     <Compile Include="Abastecimentos\Combustivel.cs" />
     <Compile Include="Abastecimentos\TipoDeCombustivel.cs" />
+    <Compile Include="Contas\UsuarioDaSessao.cs" />
     <Compile Include="Contas\Usuario.cs" />
     <Compile Include="Context\IContextoDeDados.cs" />
     <Compile Include="Motoristas\CategoriaDaCnh.cs" />
