@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BtzTransports.Web
 {
@@ -9,22 +8,48 @@ namespace BtzTransports.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js"
+            ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                "~/Scripts/jquery.validate*"
+            ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                "~/Scripts/modernizr-*"
+            ));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                "~/Scripts/bootstrap.js"
+            ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                "~/Content/bootstrap.css",
+                "~/Content/toastr.css",
+                "~/Content/site.css"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/messages").Include(
+                "~/Scripts/sweetalert.js",
+                "~/Scripts/toastr.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/app/api-service.js",
+                "~/Scripts/app/app.js",
+                "~/Scripts/app/messages.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/api/conta").Include(
+                "~/Scripts/api/conta.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/conta/login").Include(
+                "~/Scripts/conta/login.js"
+            ));
         }
     }
 }

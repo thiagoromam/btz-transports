@@ -66,3 +66,6 @@ CREATE TABLE Usuario (
 	INDEX UX_Usuario_Login UNIQUE ([Login])
 )
 GO
+
+INSERT INTO Usuario (Nome, [Login], Senha) VALUES ('Administrador', 'admin', 'WMjdjvK+cHb6wicbN2ld533k4JIh0Ah8YvT+k/g5bkE=;kE8WPJnKP5iVbUOoSFr3asSK1qdrtp8uXg==') -- 123
+GO

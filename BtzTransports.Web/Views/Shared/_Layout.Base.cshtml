@@ -7,11 +7,13 @@
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
 </head>
-<body>
+<body ng-app="app">
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/messages")
+    @Scripts.Render("~/bundles/angular")
     @RenderSection("scripts", required: false)
 </body>
 </html>

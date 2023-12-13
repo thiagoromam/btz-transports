@@ -37,6 +37,8 @@ namespace BtzTransports.Web.Api
             if (usuario == null)
                 return BadRequest("Login ou senha inválidos.");
 
+            lembrar = true;
+
             Usuario.Preencher(usuario, DefaultAuthenticationTypes.ApplicationCookie, lembrar);
 
             ClaimsIdentity identidade = Usuario.GetClaims();
@@ -47,7 +49,8 @@ namespace BtzTransports.Web.Api
 
             if (!lembrar)
                 definicoes.ExpiresUtc = DateTime.UtcNow.AddMinutes(30);
-
+            
+            _authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             _authenticationManager.SignIn(definicoes, identidade);
 
             return Ok();

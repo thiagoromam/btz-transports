@@ -32,12 +32,6 @@ namespace General.Authorization
 
             user.Load((ClaimsIdentity)_context.Principal.Identity);
 
-            if (user.IsAuthenticated)
-            {
-                authenticationManager.SignOut(user.AuthenticationType);
-                user.Load(new ClaimsIdentity());
-            }
-
             _context.Principal = user;
         }
         private bool AllowAnonymous()
