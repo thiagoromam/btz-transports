@@ -1,0 +1,36 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Abastecimentos";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/api/abastecimentos")
+    @Scripts.Render("~/bundles/abastecimento/index")
+}
+
+<div ng-controller="AbastecimentosController" ng-init="listar()">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th class="text-end">
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="abastecimento in abastecimentos">
+                <td ng-bind="abastecimento.nome"></td>
+                <td class="text-end">
+                    <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{abastecimento.id}}">Editar</a>
+                    <button class="btn btn-danger btn-sm" ng-click="remover(abastecimento)">Remover</button>
+                </td>
+            </tr>
+            <tr ng-show="abastecimentos.length == 0">
+                <td colspan="6">
+                    Nenhum abastecimento cadastrado.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

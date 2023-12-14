@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Abastecimentos\Abastecimento.cs" />
     <Compile Include="Abastecimentos\Combustivel.cs" />
+    <Compile Include="Abastecimentos\GerenciadorDeAbastecimentos.cs" />
     <Compile Include="Abastecimentos\TipoDeCombustivel.cs" />
     <Compile Include="Contas\GerenciadorDeContas.cs" />
     <Compile Include="Contas\UsuarioDaSessao.cs" />

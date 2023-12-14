@@ -69,3 +69,8 @@ GO
 
 INSERT INTO Usuario (Nome, [Login], Senha) VALUES ('Administrador', 'admin', 'WMjdjvK+cHb6wicbN2ld533k4JIh0Ah8YvT+k/g5bkE=;kE8WPJnKP5iVbUOoSFr3asSK1qdrtp8uXg==') -- 123
 GO
+
+INSERT INTO Combustivel (Tipo, Preco) VALUES (1, 4.29)
+INSERT INTO Combustivel (Tipo, Preco) VALUES (2, 2.99)
+INSERT INTO Combustivel (Tipo, Preco) VALUES (4, 2.09)
+GO

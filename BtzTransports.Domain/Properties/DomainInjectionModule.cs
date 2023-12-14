@@ -1,4 +1,5 @@
-﻿using BtzTransports.Contas;
+﻿using BtzTransports.Abastecimentos;
+using BtzTransports.Contas;
 using BtzTransports.Motoristas;
 using BtzTransports.Veiculos;
 using General.Authorization;
@@ -15,11 +16,16 @@ namespace BtzTransports.Domain.Properties
         {
             _container = container;
 
+            Abastecimentos();
             Contas();
             Motoristas();
             Veiculos();
         }
 
+        private void Abastecimentos()
+        {
+            _container.Register<IGerenciadorDeAbastecimentos, GerenciadorDeAbastecimentos>();
+        }
         private void Contas()
         {
             _container.Register<IUsuarioDaSessao, UsuarioDaSessao>(Lifestyle.Scoped);

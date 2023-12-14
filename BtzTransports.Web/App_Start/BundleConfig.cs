@@ -52,6 +52,7 @@ namespace BtzTransports.Web
             bundles.Add(new ScriptBundle("~/bundles/api/usuarios").Include("~/Scripts/api/usuarios.js"));
             bundles.Add(new ScriptBundle("~/bundles/api/motoristas").Include("~/Scripts/api/motoristas.js"));
             bundles.Add(new ScriptBundle("~/bundles/api/veiculos").Include("~/Scripts/api/veiculos.js"));
+            bundles.Add(new ScriptBundle("~/bundles/api/abastecimentos").Include("~/Scripts/api/abastecimentos.js"));
 
             // conta
             bundles.Add(new ScriptBundle("~/bundles/conta/login").Include("~/Scripts/conta/login.js"));
@@ -67,6 +68,10 @@ namespace BtzTransports.Web
             // veiculos
             bundles.Add(new ScriptBundle("~/bundles/veiculo/index").Include("~/Scripts/veiculo/index.js"));
             bundles.Add(new ScriptBundle("~/bundles/veiculo/editar").Include("~/Scripts/veiculo/editar.js"));
+
+            // abastecimento
+            bundles.Add(new ScriptBundle("~/bundles/abastecimento/index").Include("~/Scripts/abastecimento/index.js"));
+            bundles.Add(new ScriptBundle("~/bundles/abastecimento/editar").Include("~/Scripts/abastecimento/editar.js"));
         }
     }
 }

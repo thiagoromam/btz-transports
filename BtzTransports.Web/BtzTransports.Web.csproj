@@ -187,6 +187,7 @@
   <ItemGroup>
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\ContasController.cs" />
+    <Compile Include="Api\AbastecimentosController.cs" />
     <Compile Include="Api\VeiculosController.cs" />
     <Compile Include="Api\UsuariosController.cs" />
     <Compile Include="Api\MotoristasController.cs" />
@@ -196,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Authorization\ApiAuthorizationAttribute.cs" />
+    <Compile Include="Controllers\AbastecimentoController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\ExceptionHandlerAttribute.cs" />
@@ -209,6 +211,7 @@
     </Compile>
     <Compile Include="Models\Contas\LoginModel.cs" />
     <Compile Include="Models\Contas\UsuarioModel.cs" />
+    <Compile Include="Models\Abastecimentos\AbastecimentoModel.cs" />
     <Compile Include="Models\Veiculos\VeiculoModel.cs" />
     <Compile Include="Models\Motoristas\MotoristaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +243,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\api\abastecimentos.js" />
     <Content Include="Scripts\api\veiculos.js" />
     <Content Include="Scripts\api\usuarios.js" />
     <Content Include="Scripts\api\motoristas.js" />
@@ -267,6 +271,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\abastecimento\editar.js" />
+    <Content Include="Scripts\abastecimento\index.js" />
     <Content Include="Scripts\veiculo\editar.js" />
     <Content Include="Scripts\veiculo\index.js" />
     <Content Include="Scripts\usuario\editar.js" />
@@ -296,6 +302,8 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Veiculo\Editar.cshtml" />
     <Content Include="Views\Veiculo\Index.cshtml" />
+    <Content Include="Views\Abastecimento\Editar.cshtml" />
+    <Content Include="Views\Abastecimento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
