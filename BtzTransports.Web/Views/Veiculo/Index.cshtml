@@ -1,0 +1,42 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Veículos";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/api/veiculos")
+    @Scripts.Render("~/bundles/veiculo/index")
+}
+
+<div ng-controller="VeiculosController" ng-init="listar()">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Placa</th>
+                <th>Tipos de combustível</th>
+                <th>Capacidade do tanque</th>
+                <th class="text-end">
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="veiculo in veiculos">
+                <td ng-bind="veiculo.nome"></td>
+                <td ng-bind="veiculo.placa"></td>
+                <td ng-bind="veiculo.tiposDeCombustivel | tipoDeCombustivel: ' | '"></td>
+                <td ng-bind="veiculo.capacidadeDoTanque"></td>
+                <td class="text-end">
+                    <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{veiculo.id}}">Editar</a>
+                    <button class="btn btn-danger btn-sm" ng-click="remover(veiculo)">Remover</button>
+                </td>
+            </tr>
+            <tr ng-show="veiculos.length == 0">
+                <td colspan="5">
+                    Nenhum veículo cadastrado.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
