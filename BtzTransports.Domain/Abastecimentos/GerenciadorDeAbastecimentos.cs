@@ -1,6 +1,7 @@
 ﻿using BtzTransports.Context;
 using BtzTransports.Exceptions;
 using BtzTransports.Motoristas;
+using BtzTransports.Veiculos;
 using General.Exceptions;
 
 namespace BtzTransports.Abastecimentos
@@ -58,10 +59,23 @@ namespace BtzTransports.Abastecimentos
         {
             abastecimento.Veiculo = _contexto.Veiculos.Find(abastecimento.IdVeiculo);
             abastecimento.MotoristaResponsavel = _contexto.Motoristas.Find(abastecimento.IdMotoristaResponsavel);
+
+            Combustivel combustivel = _contexto.Combustiveis.Find(abastecimento.TipoDeCombustivel);
+
+            abastecimento.PrecoDoCombustivel = combustivel.Preco;
         }
         private void ValidarEdicao(Abastecimento abastecimento)
         {
-            if (abastecimento.MotoristaResponsavel.Status != StatusDoMotorista.Ativo)
+            Veiculo veiculo = abastecimento.Veiculo;
+            Motorista motoristaResponsavel = abastecimento.MotoristaResponsavel;
+
+            if (!veiculo.TiposDeCombustivel.HasFlag(abastecimento.TipoDeCombustivel))
+                throw new CommonException("Esse veículo não suporta esse tipo de combustível.");
+
+            if (abastecimento.Quantidade > veiculo.CapacidadeDoTanque)
+                throw new CommonException("A quantidade abastecida é maior que a capacidade do tanque do veículo.");
+
+            if (motoristaResponsavel.Status != StatusDoMotorista.Ativo)
                 throw new CommonException("Esse motorista não está ativo.");
         }
     }

@@ -17,6 +17,7 @@
                 <th>Data</th>
                 <th>Tipo de combustível</th>
                 <th>Quantidade</th>
+                <th>Custo</th>
                 <th class="text-end">
                     <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
                 </th>
@@ -29,13 +30,14 @@
                 <td ng-bind="abastecimento.data | date: 'dd/MM/yyyy'"></td>
                 <td ng-bind="abastecimento.tipoDeCombustivel | tipoDeCombustivel"></td>
                 <td ng-bind="abastecimento.quantidade | number: 2"></td>
+                <td ng-bind="abastecimento.custo | number: 2"></td>
                 <td class="text-end">
                     <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{abastecimento.id}}">Editar</a>
                     <button class="btn btn-danger btn-sm" ng-click="remover(abastecimento)">Remover</button>
                 </td>
             </tr>
             <tr ng-show="abastecimentos.length == 0">
-                <td colspan="5">
+                <td colspan="7">
                     Nenhum abastecimento cadastrado.
                 </td>
             </tr>

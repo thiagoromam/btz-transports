@@ -12,7 +12,9 @@ namespace BtzTransports.Web.Models.Abastecimentos
         public int IdMotoristaResponsavel { get; set; }
         public DateTime Data { get; set; }
         public TipoDeCombustivel TipoDeCombustivel { get; set; }
+        public decimal PrecoDoCombustivel { get; set; }
         public decimal Quantidade { get; set; }
+        public decimal Custo { get; set; }
 
         public VeiculoModel Veiculo { get; set; }
         public MotoristaModel MotoristaResponsavel { get; set; }
@@ -42,7 +44,9 @@ namespace BtzTransports.Web.Models.Abastecimentos
                 IdMotoristaResponsavel = abastecimento.IdMotoristaResponsavel,
                 Data = abastecimento.Data,
                 TipoDeCombustivel = abastecimento.TipoDeCombustivel,
+                PrecoDoCombustivel = abastecimento.PrecoDoCombustivel,
                 Quantidade = abastecimento.Quantidade,
+                Custo = abastecimento.Custo,
 
                 Veiculo = veiculo ? VeiculoModel.Converter(abastecimento.Veiculo) : null,
                 MotoristaResponsavel = motorista ? MotoristaModel.Converter(abastecimento.MotoristaResponsavel) : null

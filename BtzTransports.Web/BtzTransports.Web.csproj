@@ -186,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\BaseApiController.cs" />
+    <Compile Include="Api\CombustiveisController.cs" />
     <Compile Include="Api\ContasController.cs" />
     <Compile Include="Api\AbastecimentosController.cs" />
     <Compile Include="Api\VeiculosController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Abastecimentos\CombustivelModel.cs" />
     <Compile Include="Models\Contas\LoginModel.cs" />
     <Compile Include="Models\Contas\UsuarioModel.cs" />
     <Compile Include="Models\Abastecimentos\AbastecimentoModel.cs" />
@@ -239,6 +241,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\api\combustiveis.js" />
     <Content Include="Scripts\api\abastecimentos.js" />
     <Content Include="Scripts\api\veiculos.js" />
     <Content Include="Scripts\api\usuarios.js" />

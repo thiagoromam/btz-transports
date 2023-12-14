@@ -42,6 +42,7 @@ CREATE TABLE Abastecimento (
 	IdMotoristaResponsavel INT NOT NULL,
 	[Data] DATE NOT NULL,
 	TipoDeCombustivel INT NOT NULL,
+	PrecoDoCombustivel DECIMAL(5, 2) NOT NULL,
 	Quantidade DECIMAL(5, 2) NOT NULL,
 
 	CONSTRAINT PK_Abastecimento PRIMARY KEY (Id),

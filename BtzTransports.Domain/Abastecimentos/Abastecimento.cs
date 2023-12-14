@@ -12,7 +12,12 @@ namespace BtzTransports.Abastecimentos
         public int IdMotoristaResponsavel { get; set; }
         public DateTime Data { get; set; }
         public TipoDeCombustivel TipoDeCombustivel { get; set; }
+        public decimal PrecoDoCombustivel { get; set; }
         public decimal Quantidade { get; set; }
+        public decimal Custo
+        {
+            get => Quantidade * PrecoDoCombustivel;
+        }
 
         public virtual Veiculo Veiculo { get; set; }
         public virtual Motorista MotoristaResponsavel { get; set; }
