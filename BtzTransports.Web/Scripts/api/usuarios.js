@@ -6,7 +6,7 @@
 
         this.listar = function () {
             return http.get(uri);
-        }
+        };
         this.buscar = function (id) {
             return http.get(`${uri}/${id}`);
         };

@@ -6,7 +6,7 @@
 
         this.listar = function (opcoes) {
             return http.get(`${uri}?${$.param(opcoes)}`);
-        }
+        };
         this.buscar = function (id) {
             return http.get(`${uri}/${id}`);
         };
