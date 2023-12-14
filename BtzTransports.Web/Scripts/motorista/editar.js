@@ -4,6 +4,7 @@
     app.controller("EditarController", ["$scope", "api", "toastr", function (scope, api, toastr) {
 
         scope.motorista = {
+            categoriaDaCnh: Enum.categoriaDaCnh.acc,
             status: Enum.statusDoMotorista.ativo
         };
 

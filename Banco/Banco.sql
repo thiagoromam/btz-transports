@@ -26,6 +26,7 @@ CREATE TABLE Motorista (
 	Nome VARCHAR(50) NOT NULL,
 	Cpf VARCHAR(11) NOT NULL,
 	Cnh VARCHAR(10) NOT NULL,
+	CategoriaDaCnh INT NOT NULL,
 	DataDeNascimento DATE NOT NULL,
 	[Status] INT NOT NULL,
 
@@ -38,13 +39,14 @@ GO
 CREATE TABLE Abastecimento (
 	Id INT IDENTITY,
 	IdVeiculo INT NOT NULL,
-	IdMotorista INT NOT NULL,
+	IdMotoristaResponsavel INT NOT NULL,
+	[Data] DATE NOT NULL,
 	TipoDeCombustivel INT NOT NULL,
 	Quantidade DECIMAL(5, 2) NOT NULL,
 
 	CONSTRAINT PK_Abastecimento PRIMARY KEY (Id),
 	CONSTRAINT FK_Abastecimento_IdVeiculo FOREIGN KEY (IdVeiculo) REFERENCES Veiculo (Id),
-	CONSTRAINT FK_Abastecimento_IdMotorista FOREIGN KEY (IdMotorista) REFERENCES Motorista (Id),
+	CONSTRAINT FK_Abastecimento_IdMotoristaResponsavel FOREIGN KEY (IdMotoristaResponsavel) REFERENCES Motorista (Id),
 )
 GO
 

@@ -9,6 +9,7 @@ namespace BtzTransports.Web.Models.Motoristas
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Cnh { get; set; }
+        public CategoriaDaCnh CategoriaDaCnh { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public StatusDoMotorista Status { get; set; }
 
@@ -20,6 +21,7 @@ namespace BtzTransports.Web.Models.Motoristas
                 Nome = Nome,
                 Cpf = Cpf,
                 Cnh = Cnh,
+                CategoriaDaCnh = CategoriaDaCnh,
                 DataDeNascimento = DataDeNascimento,
                 Status = Status,
             };
@@ -33,6 +35,7 @@ namespace BtzTransports.Web.Models.Motoristas
                 Nome = motorista.Nome,
                 Cpf = motorista.Cpf,
                 Cnh = motorista.Cnh,
+                CategoriaDaCnh = motorista.CategoriaDaCnh,
                 DataDeNascimento = motorista.DataDeNascimento,
                 Status = motorista.Status,
             };

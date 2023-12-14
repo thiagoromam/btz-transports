@@ -23,7 +23,14 @@
             <input type="text" class="form-control" ng-model="motorista.cnh" maxlength="10" required />
         </div>
         <div class="form-group">
-            <label>CNH</label>
+            <label>Categoria da CNH</label> <br />
+            <div class="form-check form-check-inline" ng-repeat="e in Enum.categoriaDaCnh.options">
+                <input class="form-check-input" type="radio" ng-model="motorista.categoriaDaCnh" id="categoriaDaCnh_{{e.name}}" ng-value="e.value" />
+                <label class="form-check-label" for="categoriaDaCnh_{{e.name}}" ng-bind="e.display"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Data de nascimento</label>
             <input type="date" class="form-control" ng-model="motorista.dataDeNascimento" required />
         </div>
         <div class="form-group">

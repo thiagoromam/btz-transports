@@ -24,7 +24,7 @@ namespace BtzTransports.Web.Api
         {
             var abastecimentos = _contexto.Abastecimentos
                 .Include(a => a.Veiculo)
-                .Include(a => a.Motorista) // o lazy load está habilitado, mas o include já carrega tudo numa consulta
+                .Include(a => a.MotoristaResponsavel) // o lazy load está habilitado, mas o include já carrega tudo numa consulta
                 .ToArray();
 
             // query, buscas e paginação ao invés de enumeração

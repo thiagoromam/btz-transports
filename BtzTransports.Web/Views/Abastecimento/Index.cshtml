@@ -12,8 +12,9 @@
     <table class="table table-sm">
         <thead>
             <tr>
-                <th>Motorista</th>
                 <th>Veículo</th>
+                <th>Motorista responsável</th>
+                <th>Data</th>
                 <th>Tipo de combustível</th>
                 <th>Quantidade</th>
                 <th class="text-end">
@@ -23,8 +24,9 @@
         </thead>
         <tbody>
             <tr ng-repeat="abastecimento in abastecimentos">
-                <td ng-bind="abastecimento.motorista.nome"></td>
                 <td ng-bind="abastecimento.veiculo.nome"></td>
+                <td ng-bind="abastecimento.motoristaResponsavel.nome"></td>
+                <td ng-bind="abastecimento.data | date: 'dd/MM/yyyy'"></td>
                 <td ng-bind="abastecimento.tipoDeCombustivel | tipoDeCombustivel"></td>
                 <td ng-bind="abastecimento.quantidade | number: 2"></td>
                 <td class="text-end">

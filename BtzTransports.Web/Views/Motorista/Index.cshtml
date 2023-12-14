@@ -26,7 +26,7 @@
             <tr ng-repeat="motorista in motoristas">
                 <td ng-bind="motorista.nome"></td>
                 <td ng-bind="motorista.cpf"></td>
-                <td ng-bind="motorista.cnh"></td>
+                <td>{{motorista.cnh}} - {{motorista.categoriaDaCnh | categoriaDaCnh}}</td>
                 <td ng-bind="motorista.dataDeNascimento | date: 'dd/MM/yyyy'"></td>
                 <td ng-bind="motorista.status | statusDoMotorista"></td>
                 <td class="text-end">

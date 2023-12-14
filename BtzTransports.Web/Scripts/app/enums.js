@@ -31,6 +31,15 @@ Enum.tipoDeCombustivel = new Enum([
     { value: 1 << 2, name: "diesel", display: "Diesel" }
 ], true);
 
+Enum.categoriaDaCnh = new Enum([
+    { value: 1, name: "acc", display: "ACC" },
+    { value: 2, name: "a", display: "A" },
+    { value: 3, name: "b", display: "B" },
+    { value: 4, name: "c", display: "C" },
+    { value: 5, name: "d", display: "D" },
+    { value: 6, name: "e", display: "E" }
+]);
+
 (function () {
     var app = angular.module("app");
 
@@ -56,4 +65,5 @@ Enum.tipoDeCombustivel = new Enum([
 
     createFilter("statusDoMotorista");
     createFilter("tipoDeCombustivel");
+    createFilter("categoriaDaCnh");
 })();

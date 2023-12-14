@@ -13,6 +13,7 @@ namespace BtzTransports.Motoristas
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Cnh { get; set; }
+        public CategoriaDaCnh CategoriaDaCnh { get; set; }
         public DateTime DataDeNascimento
         {
             get => _dataDeNascimento;

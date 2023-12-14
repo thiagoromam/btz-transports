@@ -3,7 +3,9 @@
 
     app.controller("EditarController", ["$scope", "api", "toastr", function (scope, api, toastr) {
 
-        scope.abastecimento = {};
+        scope.abastecimento = {
+            data: new Date()
+        };
 
         scope.carregar = function (id) {
             if (id)

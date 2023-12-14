@@ -68,7 +68,7 @@ namespace BtzTransports.Motoristas
         }
         private bool PodeSerRemovido(Motorista motorista)
         {
-            return !_contexto.Abastecimentos.Any(a => a.IdMotorista == motorista.Id);
+            return !_contexto.Abastecimentos.Any(a => a.IdMotoristaResponsavel == motorista.Id);
         }
     }
 }

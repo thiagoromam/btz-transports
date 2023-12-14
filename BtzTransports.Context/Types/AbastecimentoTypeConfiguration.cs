@@ -12,7 +12,7 @@ namespace BtzTransports.Context.Types
             HasKey(a => a.Id);
 
             HasRequired(a => a.Veiculo).WithMany(v => v.Abastecimentos).HasForeignKey(a => a.IdVeiculo);
-            HasRequired(a => a.Motorista).WithMany(v => v.Abastecimentos).HasForeignKey(a => a.IdMotorista);
+            HasRequired(a => a.MotoristaResponsavel).WithMany(v => v.Abastecimentos).HasForeignKey(a => a.IdMotoristaResponsavel);
         }
     }
 }

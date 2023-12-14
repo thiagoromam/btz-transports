@@ -13,18 +13,22 @@
 <div ng-controller="EditarController" ng-init="carregar(@Model)">
     <form ng-submit="salvar()">
         <div class="form-group">
-            <label>Motorista</label>
-            <selecao-de-motorista ng-model="abastecimento.idMotorista" obrigatorio></selecao-de-motorista>
-        </div>
-        <div class="form-group">
             <label>Veículo</label>
             <selecao-de-veiculo ng-model="abastecimento.idVeiculo" obrigatorio></selecao-de-veiculo>
         </div>
         <div class="form-group">
+            <label>Motorista</label>
+            <selecao-de-motorista ng-model="abastecimento.idMotoristaResponsavel" obrigatorio></selecao-de-motorista>
+        </div>
+        <div class="form-group">
+            <label>Data</label>
+            <input type="date" class="form-control" ng-model="abastecimento.data" required />
+        </div>
+        <div class="form-group">
             <label>Tipo de combustível</label> <br />
             <div class="form-check form-check-inline" ng-repeat="e in Enum.tipoDeCombustivel.options">
-                <input class="form-check-input" type="radio" id="status_{{e.name}}" ng-model="abastecimento.tipoDeCombustivel" ng-value="e.value" />
-                <label class="form-check-label" for="status_{{e.name}}" ng-bind="e.display"></label>
+                <input class="form-check-input" type="radio" id="tipoDeCombustivel_{{e.name}}" ng-model="abastecimento.tipoDeCombustivel" ng-value="e.value" />
+                <label class="form-check-label" for="tipoDeCombustivel_{{e.name}}" ng-bind="e.display"></label>
             </div>
         </div>
         <div class="form-group">

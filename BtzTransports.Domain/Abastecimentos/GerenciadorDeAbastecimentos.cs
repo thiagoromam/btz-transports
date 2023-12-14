@@ -37,12 +37,12 @@ namespace BtzTransports.Abastecimentos
             Abastecimento existente = _contexto.Abastecimentos.Find(abastecimento.Id) ?? throw new NotFoundException();
 
             existente.IdVeiculo = abastecimento.IdVeiculo;
-            existente.IdMotorista = abastecimento.IdMotorista;
+            existente.IdMotoristaResponsavel = abastecimento.IdMotoristaResponsavel;
             existente.TipoDeCombustivel = abastecimento.TipoDeCombustivel;
             existente.Quantidade = abastecimento.Quantidade;
 
             existente.Veiculo = abastecimento.Veiculo;
-            existente.Motorista = abastecimento.Motorista;
+            existente.MotoristaResponsavel = abastecimento.MotoristaResponsavel;
 
             _contexto.SaveChanges();
         }
@@ -57,11 +57,11 @@ namespace BtzTransports.Abastecimentos
         private void CarregarDados(Abastecimento abastecimento)
         {
             abastecimento.Veiculo = _contexto.Veiculos.Find(abastecimento.IdVeiculo);
-            abastecimento.Motorista = _contexto.Motoristas.Find(abastecimento.IdMotorista);
+            abastecimento.MotoristaResponsavel = _contexto.Motoristas.Find(abastecimento.IdMotoristaResponsavel);
         }
         private void ValidarEdicao(Abastecimento abastecimento)
         {
-            if (abastecimento.Motorista.Status != StatusDoMotorista.Ativo)
+            if (abastecimento.MotoristaResponsavel.Status != StatusDoMotorista.Ativo)
                 throw new CommonException("Esse motorista não está ativo.");
         }
     }

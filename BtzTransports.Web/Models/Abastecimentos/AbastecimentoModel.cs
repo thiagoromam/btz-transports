@@ -1,6 +1,7 @@
 ﻿using BtzTransports.Abastecimentos;
 using BtzTransports.Web.Models.Motoristas;
 using BtzTransports.Web.Models.Veiculos;
+using System;
 
 namespace BtzTransports.Web.Models.Abastecimentos
 {
@@ -8,12 +9,13 @@ namespace BtzTransports.Web.Models.Abastecimentos
     {
         public int Id { get; set; }
         public int IdVeiculo { get; set; }
-        public int IdMotorista { get; set; }
+        public int IdMotoristaResponsavel { get; set; }
+        public DateTime Data { get; set; }
         public TipoDeCombustivel TipoDeCombustivel { get; set; }
         public decimal Quantidade { get; set; }
 
         public VeiculoModel Veiculo { get; set; }
-        public MotoristaModel Motorista { get; set; }
+        public MotoristaModel MotoristaResponsavel { get; set; }
 
         public Abastecimento Converter()
         {
@@ -21,7 +23,8 @@ namespace BtzTransports.Web.Models.Abastecimentos
             {
                 Id = Id,
                 IdVeiculo = IdVeiculo,
-                IdMotorista = IdMotorista,
+                IdMotoristaResponsavel = IdMotoristaResponsavel,
+                Data = Data,
                 TipoDeCombustivel = TipoDeCombustivel,
                 Quantidade = Quantidade,
             };
@@ -36,12 +39,13 @@ namespace BtzTransports.Web.Models.Abastecimentos
             {
                 Id = abastecimento.Id,
                 IdVeiculo = abastecimento.IdVeiculo,
-                IdMotorista = abastecimento.IdMotorista,
+                IdMotoristaResponsavel = abastecimento.IdMotoristaResponsavel,
+                Data = abastecimento.Data,
                 TipoDeCombustivel = abastecimento.TipoDeCombustivel,
                 Quantidade = abastecimento.Quantidade,
 
                 Veiculo = veiculo ? VeiculoModel.Converter(abastecimento.Veiculo) : null,
-                Motorista = motorista ? MotoristaModel.Converter(abastecimento.Motorista) : null
+                MotoristaResponsavel = motorista ? MotoristaModel.Converter(abastecimento.MotoristaResponsavel) : null
             };
         }
     }
