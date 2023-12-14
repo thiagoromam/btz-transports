@@ -196,12 +196,9 @@
     <Compile Include="App_Start\InjectionConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Authorization\ApiAuthorizationAttribute.cs" />
     <Compile Include="Controllers\AbastecimentoController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Filters\ExceptionHandlerAttribute.cs" />
-    <Compile Include="Authorization\MvcAuthorizationAttribute.cs" />
     <Compile Include="Controllers\BaseMvcController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\MotoristaController.cs" />
@@ -215,7 +212,6 @@
     <Compile Include="Models\Motoristas\MotoristaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\WebInjectionModule.cs" />
-    <Compile Include="Serialization\CommonJsonSettings.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

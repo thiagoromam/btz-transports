@@ -1,12 +1,11 @@
-﻿using General.Authorization;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security.Principal;
 using System.Web.Mvc;
 
-namespace BtzTransports.Web.Authorization
+namespace General.Authorization
 {
     public class MvcAuthorizationAttribute : FilterAttribute, IAuthorizationFilter
     {

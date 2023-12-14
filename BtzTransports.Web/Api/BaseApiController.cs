@@ -1,6 +1,6 @@
 ﻿using BtzTransports.Contas;
-using BtzTransports.Web.Authorization;
-using BtzTransports.Web.Handlers;
+using General.Authorization;
+using General.Filters;
 using System.Web.Http;
 
 namespace BtzTransports.Web.Api

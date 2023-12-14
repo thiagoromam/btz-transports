@@ -1,12 +1,12 @@
 ﻿using BtzTransports.Exceptions;
-using BtzTransports.Web.Serialization;
+using General.Serialization;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http.Filters;
 
-namespace BtzTransports.Web.Handlers
+namespace General.Filters
 {
     public class ExceptionHandlerAttribute : ExceptionFilterAttribute
     {

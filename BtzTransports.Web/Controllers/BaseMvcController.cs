@@ -1,5 +1,5 @@
 ﻿using BtzTransports.Contas;
-using BtzTransports.Web.Authorization;
+using General.Authorization;
 using System.Web.Mvc;
 
 namespace BtzTransports.Web.Controllers

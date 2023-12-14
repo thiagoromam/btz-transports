@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace BtzTransports.Web.Serialization
+namespace General.Serialization
 {
     public class CommonJsonSettings : JsonSerializerSettings
     {

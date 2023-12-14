@@ -1,5 +1,4 @@
-﻿using BtzTransports.Web.Serialization;
-using Newtonsoft.Json.Serialization;
+﻿using General.Serialization;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
