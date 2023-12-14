@@ -12,7 +12,10 @@
     <table class="table table-sm">
         <thead>
             <tr>
-                <th>Nome</th>
+                <th>Motorista</th>
+                <th>Veículo</th>
+                <th>Tipo de combustível</th>
+                <th>Quantidade</th>
                 <th class="text-end">
                     <a class="btn btn-primary btn-sm" href="@Url.Action("Novo")">Adicionar</a>
                 </th>
@@ -20,14 +23,17 @@
         </thead>
         <tbody>
             <tr ng-repeat="abastecimento in abastecimentos">
-                <td ng-bind="abastecimento.nome"></td>
+                <td ng-bind="abastecimento.motorista.nome"></td>
+                <td ng-bind="abastecimento.veiculo.nome"></td>
+                <td ng-bind="abastecimento.tipoDeCombustivel | tipoDeCombustivel"></td>
+                <td ng-bind="abastecimento.quantidade | number: 2"></td>
                 <td class="text-end">
                     <a class="btn btn-secondary btn-sm" ng-href="@Url.Action("Editar")/{{abastecimento.id}}">Editar</a>
                     <button class="btn btn-danger btn-sm" ng-click="remover(abastecimento)">Remover</button>
                 </td>
             </tr>
             <tr ng-show="abastecimentos.length == 0">
-                <td colspan="6">
+                <td colspan="5">
                     Nenhum abastecimento cadastrado.
                 </td>
             </tr>

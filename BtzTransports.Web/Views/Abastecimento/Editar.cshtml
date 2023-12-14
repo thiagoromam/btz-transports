@@ -5,34 +5,32 @@
 
 @section scripts {
     @Scripts.Render("~/bundles/api/abastecimentos")
+    @Scripts.Render("~/bundles/veiculo/componentes")
+    @Scripts.Render("~/bundles/motorista/componentes")
     @Scripts.Render("~/bundles/abastecimento/editar")
 }
 
 <div ng-controller="EditarController" ng-init="carregar(@Model)">
     <form ng-submit="salvar()">
-        @*<div class="form-group">
-            <label>Nome</label>
-            <input type="text" class="form-control" ng-model="abastecimento.nome" maxlength="50" required />
+        <div class="form-group">
+            <label>Motorista</label>
+            <selecao-de-motorista ng-model="abastecimento.idMotorista" obrigatorio></selecao-de-motorista>
         </div>
         <div class="form-group">
-            <label>CPF</label>
-            <input type="text" class="form-control" ng-model="abastecimento.cpf" maxlength="11" required />
+            <label>Veículo</label>
+            <selecao-de-veiculo ng-model="abastecimento.idVeiculo" obrigatorio></selecao-de-veiculo>
         </div>
         <div class="form-group">
-            <label>CNH</label>
-            <input type="text" class="form-control" ng-model="abastecimento.cnh" maxlength="10" required />
-        </div>
-        <div class="form-group">
-            <label>CNH</label>
-            <input type="date" class="form-control" ng-model="abastecimento.dataDeNascimento" required />
-        </div>
-        <div class="form-group">
-            <label>Situação</label> <br />
-            <div class="form-check form-check-inline" ng-repeat="e in Enum.statusDoMotorista.options">
-                <input class="form-check-input" type="radio" ng-model="abastecimento.status" id="status_{{e.name}}" ng-value="e.value" />
+            <label>Tipo de combustível</label> <br />
+            <div class="form-check form-check-inline" ng-repeat="e in Enum.tipoDeCombustivel.options">
+                <input class="form-check-input" type="radio" id="status_{{e.name}}" ng-model="abastecimento.tipoDeCombustivel" ng-value="e.value" />
                 <label class="form-check-label" for="status_{{e.name}}" ng-bind="e.display"></label>
             </div>
-        </div>*@
+        </div>
+        <div class="form-group">
+            <label>Quantidade</label>
+            <input type="number" class="form-control" ng-model="abastecimento.quantidade" min="0.01" max="999" step="0.01" required />
+        </div>
 
         <div class="mt-5">
             <button class="btn btn-primary">Salvar</button>

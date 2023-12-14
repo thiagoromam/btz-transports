@@ -273,6 +273,8 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\abastecimento\editar.js" />
     <Content Include="Scripts\abastecimento\index.js" />
+    <Content Include="Scripts\motorista\componentes.js" />
+    <Content Include="Scripts\veiculo\componentes.js" />
     <Content Include="Scripts\veiculo\editar.js" />
     <Content Include="Scripts\veiculo\index.js" />
     <Content Include="Scripts\usuario\editar.js" />
@@ -281,6 +283,8 @@
     <Content Include="Scripts\motorista\editar.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\toastr.js" />
+    <Content Include="Templates\motorista\componentes\selecao-de-motorista.html" />
+    <Content Include="Templates\veiculo\componentes\selecao-de-veiculo.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

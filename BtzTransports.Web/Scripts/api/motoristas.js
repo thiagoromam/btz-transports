@@ -4,8 +4,8 @@
     api.resource("motoristas", ["$http", function (http) {
         var uri = "/api/motoristas";
 
-        this.listar = function () {
-            return http.get(uri);
+        this.listar = function (opcoes) {
+            return http.get(`${uri}?${$.param(opcoes)}`);
         }
         this.buscar = function (id) {
             return http.get(`${uri}/${id}`);

@@ -1,5 +1,6 @@
 ﻿using BtzTransports.Context;
 using BtzTransports.Motoristas;
+using BtzTransports.Helpers;
 using BtzTransports.Web.Models.Motoristas;
 using System.Linq;
 using System.Web.Http;
@@ -19,13 +20,14 @@ namespace BtzTransports.Web.Api
         }
 
         [HttpGet]
-        public IHttpActionResult Listar()
+        public IHttpActionResult Listar(bool apenasAtivos = false)
         {
-            var motoristas = _contexto.Motoristas.ToArray();
+            var query = _contexto.Motoristas.AsQueryable();
 
-            // query, buscas e paginação ao invés de enumeração
+            if (apenasAtivos)
+                query = query.Ativos();
 
-            return Ok(motoristas.Select(MotoristaModel.Converter));
+            return Ok(query.ToArray().Select(MotoristaModel.Converter));
         }
 
         [HttpGet]

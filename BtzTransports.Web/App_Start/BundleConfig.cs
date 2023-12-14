@@ -48,10 +48,13 @@ namespace BtzTransports.Web
             ));
 
             // apis
+            const string apiMotoristas = "~/Scripts/api/motoristas.js";
+            const string apiVeiculos = "~/Scripts/api/veiculos.js";
+
             bundles.Add(new ScriptBundle("~/bundles/api/contas").Include("~/Scripts/api/contas.js"));
             bundles.Add(new ScriptBundle("~/bundles/api/usuarios").Include("~/Scripts/api/usuarios.js"));
-            bundles.Add(new ScriptBundle("~/bundles/api/motoristas").Include("~/Scripts/api/motoristas.js"));
-            bundles.Add(new ScriptBundle("~/bundles/api/veiculos").Include("~/Scripts/api/veiculos.js"));
+            bundles.Add(new ScriptBundle("~/bundles/api/motoristas").Include(apiMotoristas));
+            bundles.Add(new ScriptBundle("~/bundles/api/veiculos").Include(apiVeiculos));
             bundles.Add(new ScriptBundle("~/bundles/api/abastecimentos").Include("~/Scripts/api/abastecimentos.js"));
 
             // conta
@@ -62,10 +65,18 @@ namespace BtzTransports.Web
             bundles.Add(new ScriptBundle("~/bundles/usuario/editar").Include("~/Scripts/usuario/editar.js"));
 
             // motorista
+            bundles.Add(new ScriptBundle("~/bundles/motorista/componentes")
+                .Include(apiMotoristas)
+                .Include("~/Scripts/motorista/componentes.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/motorista/index").Include("~/Scripts/motorista/index.js"));
             bundles.Add(new ScriptBundle("~/bundles/motorista/editar").Include("~/Scripts/motorista/editar.js"));
 
             // veiculos
+            bundles.Add(new ScriptBundle("~/bundles/veiculo/componentes")
+                .Include(apiVeiculos)
+                .Include("~/Scripts/veiculo/componentes.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/veiculo/index").Include("~/Scripts/veiculo/index.js"));
             bundles.Add(new ScriptBundle("~/bundles/veiculo/editar").Include("~/Scripts/veiculo/editar.js"));
 

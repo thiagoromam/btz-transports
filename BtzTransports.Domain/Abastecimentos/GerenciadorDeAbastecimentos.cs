@@ -1,5 +1,6 @@
 ﻿using BtzTransports.Context;
 using BtzTransports.Exceptions;
+using BtzTransports.Motoristas;
 using General.Exceptions;
 
 namespace BtzTransports.Abastecimentos
@@ -22,6 +23,7 @@ namespace BtzTransports.Abastecimentos
 
         public void Adicionar(Abastecimento abastecimento)
         {
+            CarregarDados(abastecimento);
             ValidarEdicao(abastecimento);
 
             _contexto.Abastecimentos.Add(abastecimento);
@@ -29,9 +31,7 @@ namespace BtzTransports.Abastecimentos
         }
         public void Atualizar(Abastecimento abastecimento)
         {
-            abastecimento.Veiculo = _contexto.Veiculos.Find(abastecimento.IdVeiculo);
-            abastecimento.Motorista = _contexto.Motoristas.Find(abastecimento.IdMotorista);
-
+            CarregarDados(abastecimento);
             ValidarEdicao(abastecimento);
 
             Abastecimento existente = _contexto.Abastecimentos.Find(abastecimento.Id) ?? throw new NotFoundException();
@@ -54,9 +54,14 @@ namespace BtzTransports.Abastecimentos
             _contexto.SaveChanges();
         }
 
+        private void CarregarDados(Abastecimento abastecimento)
+        {
+            abastecimento.Veiculo = _contexto.Veiculos.Find(abastecimento.IdVeiculo);
+            abastecimento.Motorista = _contexto.Motoristas.Find(abastecimento.IdMotorista);
+        }
         private void ValidarEdicao(Abastecimento abastecimento)
         {
-            if (abastecimento.Motorista.Status != Motoristas.StatusDoMotorista.Ativo)
+            if (abastecimento.Motorista.Status != StatusDoMotorista.Ativo)
                 throw new CommonException("Esse motorista não está ativo.");
         }
     }
