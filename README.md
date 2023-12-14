@@ -36,6 +36,13 @@ O ContextoDeDados está configurado como uma única instância por requisição,
 
 Isso também permitiria criar escopos de transação aninhados, sem a preocupação de qual parte do código iniciaria a transação.
 
+## Banco de dados
+O Banco de dados utilizado é o SQL Server.
+
+Apesar de poder utilizar o EntityFramework para criação e migração do banco, decidi escrever as SQLs manualmente para este teste.
+
+O arquivo está na pasta do projeto junto com o DER.
+
 ## Códificação
 Mantive o código de componentes não ligados ao negócio em inglês.
 
