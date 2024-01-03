@@ -46,6 +46,6 @@ O arquivo está na pasta do projeto junto com o DER.
 ## Códificação
 Mantive o código de componentes não ligados ao negócio em inglês.
 
-Para o código em português, utilizei inclusive pronomes em nomes de variáveis, métodos e classes, para uma melhor leitura do código.
+Para o código em português, utilizei inclusive preposições (da, de, do) em nomes de variáveis, métodos e classes, para uma melhor leitura do código.
 
-A linaguem já não possui um tamanho curto para nomes como antigamente. O intellisense da IDE também é muito robusto, não tendo dificuldades com isso.
+A linaguem já não possui mais um tamanho curto para nomes como antigamente. O intellisense da IDE também é muito robusto, não tendo dificuldades com isso.
